@@ -1,4 +1,4 @@
-﻿# SoloCode
+# SoloCode
 
 ブラウザで動作する、オフライン対応のコードエディタです。インストールやビルドは不要です。
 
@@ -38,7 +38,6 @@
 - `markdown-preview.js`: Markdown の整形表示と編集の切替
 - `vendor.js`: CodeMirror などのエディタ用ライブラリ
 - `marked.umd.js`、`purify.min.js`: Markdown の描画と HTML のサニタイズ
-- `script.original.js`: 分離前の JavaScript のバックアップ
 - `CODEMIRROR-API.md`: CodeMirror 拡張 API のメモ
 
 Markdown の画像などに外部 URL を指定した場合、その表示にはネットワーク接続が必要です。
