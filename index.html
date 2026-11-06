@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoloCode — オフラインコードエディタ</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAzMiAzMic+PHJlY3Qgd2lkdGg9JzMyJyBoZWlnaHQ9JzMyJyByeD0nNycgZmlsbD0nIzFlMjEyNycvPjxwYXRoIGQ9J00xMiA5IEw1IDE2IEwxMiAyMycgc3Ryb2tlPScjZThiMDRhJyBzdHJva2Utd2lkdGg9JzIuOCcgZmlsbD0nbm9uZScgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJy8+PHBhdGggZD0nTTIwIDkgTDI3IDE2IEwyMCAyMycgc3Ryb2tlPScjZThiMDRhJyBzdHJva2Utd2lkdGg9JzIuOCcgZmlsbD0nbm9uZScgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJy8+PC9zdmc+">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+  <div id="toolbar">
+    <span class="brand">SoloCode</span>
+    <button id="btn-new" title="新規タブ (Ctrl+Alt+N)">新規</button>
+    <button id="btn-open" title="ファイルを開く (Ctrl+O)">開く</button>
+    <button id="btn-open-folder" title="フォルダを開く">フォルダを開く</button>
+    <button id="btn-save" title="上書き保存 (Ctrl+S)">保存</button>
+    <button id="btn-saveas" title="名前を付けて保存 (Ctrl+Shift+S)">別名保存</button>
+    <span class="sep"></span>
+    <button id="btn-undo" title="元に戻す (Ctrl+Z)">↩</button>
+    <button id="btn-redo" title="やり直す (Ctrl+Y)">↪</button>
+    <button id="btn-find" title="検索・置換 (Ctrl+F)">検索</button>
+    <span class="spacer"></span>
+    <button id="btn-split" title="右に分割 (Ctrl+Alt+→)">⫿ 分割</button>
+    <button id="btn-toggle-sidebar" title="サイドバー表示切替 (Ctrl+B)">サイドバー</button>
+    <button id="btn-wrap" title="折り返し切替">折り返し</button>
+    <button id="btn-minus" title="文字を小さく">A−</button>
+    <button id="btn-plus" title="文字を大きく">A＋</button>
+    <button id="btn-theme" title="テーマ切替">◐</button>
+    <select id="lang-select" title="言語モード"></select>
+  </div>
+  <div id="workspace">
+    <div id="sidebar">
+      <div id="sidebar-header">
+        <span>エクスプローラー<span id="readonly-badge" hidden> (読み取り専用)</span></span>
+        <span class="header-actions">
+          <button id="btn-new-file-root" title="新しいファイル（ルート直下）">＋📄</button>
+          <button id="btn-new-folder-root" title="新しいフォルダ（ルート直下）">＋📁</button>
+          <button id="btn-refresh-folder" title="再読み込み(展開状態はリセットされます)">⟳</button>
+        </span>
+      </div>
+      <div id="sidebar-empty">
+        <p>フォルダが開かれていません</p>
+        <button id="btn-open-folder-empty">フォルダを開く</button>
+      </div>
+      <div id="tree" hidden></div>
+    </div>
+    <div id="resizer" title="ドラッグして幅を調整"></div>
+    <div id="main">
+      <div id="pane-container"></div>
+    </div>
+  </div>
+  <div id="status">
+    <span id="st-pos">行 1, 列 1</span>
+    <span id="st-doc"></span>
+    <span class="spacer"></span>
+    <span id="st-font"></span>
+    <span id="st-eol" class="clickable" title="クリックで改行コード切替">LF</span>
+    <span id="st-enc" class="clickable" title="クリックでエンコーディング切替">UTF-8</span>
+  </div>
+  <div id="flash"></div>
+  <input type="file" id="file-input" multiple hidden>
+  <input type="file" id="folder-input" webkitdirectory hidden>
+<script src="vendor.js"></script>
+<script src="marked.umd.js"></script>
+<script src="purify.min.js"></script>
+<script src="markdown-preview.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
